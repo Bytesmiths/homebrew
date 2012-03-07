@@ -4,6 +4,7 @@ class Mariadb < Formula
   # You probably don't want to have this and MySQL's formula linked at the same time
   # Just saying.
   url 'http://ftp.osuosl.org/pub/mariadb/mariadb-5.3.5-ga/kvm-tarbake-jaunty-x86/mariadb-5.3.5-ga.tar.gz'
+  version '5.3.5'
   homepage 'http://mariadb.org/'
   md5 '98ce0441b37c8d681855150495fdc03b'
 
@@ -33,6 +34,7 @@ class Mariadb < Formula
     ENV.universal_binary if ARGV.build_universal?
 
     configure_args = [
+      "--with-libedit",  
       "--without-docs",
       "--without-debug",
       "--disable-dependency-tracking",
